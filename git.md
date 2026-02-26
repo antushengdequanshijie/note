@@ -1,19 +1,20 @@
 # git 相关操作
 
-## 2026-02-26
-
-
-- 安装 Anaconda3
-- 创建 PyTorch GPU 环境
-- 安装 VS Code 插件# 一级标题
-
-## 二级标题
-
-- 或 * 列表
-
-python 代码块
-![alt text](image.png)
-**折叠章节**  
+## 配置SSH linux
 ```python
-import torch
-print(torch.cuda.is_available())
+    ls ~/.ssh
+    #没有则生成
+    ssh-keygen -t rsa -b 4096 -C "你的邮箱"
+    #复制公钥
+    cat ~/.ssh/id_rsa.pub
+    #拉取代码
+    git clone git@github.com:antushengdequanshijie/note.git
+    #配置用户名和邮箱
+    git config --global user.name "你的名字"
+    git config --global user.email "你的邮箱@example.com"
+    #上传代码
+    cd ~/GitHub/note          # 进入项目目录
+    git status                 # 查看修改
+    git add .                  # 添加所有改动
+    git commit -m "更新 2026-02-26 Markdown 日志"
+    git push -u origin main    # 第一次 push，注意main分支
