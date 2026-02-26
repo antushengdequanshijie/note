@@ -1,4 +1,5 @@
 <!-- TOC -->
+
 # ubuntu24.04重装
 ## ubuntu 转移数据代码
 
@@ -23,6 +24,10 @@
     #卸载外接硬盘
     sudo umount /mnt/usb
     sudo umount /mnt/root
+    sudo apt update
+    sudo ubuntu-drivers autoinstall
+    #重启
+    sudo reboot
     
 ## u盘启动盘制作
 ubuntu24.04 desktop 清华镜像源下载
@@ -35,6 +40,7 @@ ubuntu24.04 desktop 清华镜像源下载
 ## 系统重装
   开机按ESC,进入BIOS
   把USB调到第一个然后保存进入重装系统
+  
   显卡是4090，安装的时候会出现花屏：
   ![alt text](image-1.png)
 
@@ -42,9 +48,17 @@ ubuntu24.04 desktop 清华镜像源下载
  -正常默认即可
   然后重启拔掉u盘
   ![alt text](image-2.png)
+  
+# 软件安装
+
+- 远程在github里面搜clash verge在里面找对应版本
+- anaconda3去清华镜像源下载安装
   ```python
-    sudo apt update
-    sudo ubuntu-drivers autoinstall
-    #重启
-    sudo reboot
-  ```
+  #清华镜像源下载
+  https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/
+  #pytorch安装要确定对应cuda版本，显卡型号
+  pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+  #- 中文输入法安装
+  sudo apt update
+  sudo apt install fcitx5 fcitx5-chinese-addons -y
+然后在 Ubuntu 顶部右上角系统托盘可以看到 Fcitx 图标，点击 → 添加 Chinese (Pinyin)
