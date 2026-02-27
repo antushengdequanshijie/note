@@ -1,7 +1,10 @@
-<!-- TOC -->
+- [ubuntu24.04重装](#ubuntu2404重装)
+  - [ubuntu 转移数据代码](#ubuntu-转移数据代码)
+
 
 # ubuntu24.04重装
 ## ubuntu 转移数据代码
+
 
 - 找到外接硬盘和本地硬盘home所在的位置
   
@@ -35,7 +38,7 @@ ubuntu24.04 desktop 清华镜像源下载
   rufus下载链接
   https://rufus.ie/zh/
   参数设置
-![alt text](image.png)
+  ![alt text](image-3.png)
 
 ## 系统重装
   开机按ESC,进入BIOS
@@ -62,3 +65,26 @@ ubuntu24.04 desktop 清华镜像源下载
   sudo apt update
   sudo apt install fcitx5 fcitx5-chinese-addons -y
 然后在 Ubuntu 顶部右上角系统托盘可以看到 Fcitx 图标，点击 → 添加 Chinese (Pinyin)
+
+# git 相关操作
+![alt text](image.png)
+## 配置SSH linux
+  ```python
+      ls ~/.ssh
+      #没有则生成
+      ssh-keygen -t rsa -b 4096 -C "你的邮箱"
+      #复制公钥
+      cat ~/.ssh/id_rsa.pub
+      #拉取代码
+      git clone git@github.com:antushengdequanshijie/note.git
+      #配置用户名和邮箱
+      git config --global user.name "你的名字"
+      git config --global user.email "你的邮箱@example.com"
+      #上传代码
+      cd ~/GitHub/note          # 进入项目目录
+      git status                 # 查看修改
+      git add .                  # 添加所有改动
+      git commit -m "更新 2026-02-26 Markdown 日志"
+      git push -u origin main    # 第一次 push，注意main分支
+
+  ```
